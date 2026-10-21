@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>Powiadomienia</title>
+    <link rel="manifest" href="manifest.json" />
+    <script src="notification.js" defer></script>
+</head>
+<body>
+    <h1 style="color: rgb(244, 134, 231);" >Notification API</h1>
+    <p>Uprawnienie do powiadomień: <strong id="permission">?</strong></p>
+    <button id="enable">Włącz powiadomienia</button>
+    <button id="local">Powiadomienie ze strony</button>
+    <button id="sw">Powiadomienie z service workera</button>
+
+    <hr>
+    <h2 style="color: rgb(244, 134, 231);">Formularz powiadomienia</h2>
+    <form id="notification-form">
+        <label>Tytuł: <input type="text" id="notif-title" required></label><br><br>
+        <label>Treść: <input type="text" id="notif-body"></label><br><br>
+        <label>Ikona: 
+            <select id="notif-icon">
+                <option value="android.png">android.png</option>
+                <option value="icon1.png">icon1.png</option>
+                <option value="icon2.png">icon2.png</option>
+            </select>
+        </label><br><br>
+        <button type="submit">Wyślij powiadomienie z formularza</button>
+    </form>
+
+    <hr>
+    <h2 style="color: rgb(244, 134, 231);">Web Push</h2>
+    <button id="subscribe">Subskrybuj powiadomienia push</button>
+    <button id="unsubscribe">Anuluj subskrypcję</button>
+    <p>
+        <label for="subscription">Subskrypcja (skopiuj do pliku lab_02/subscription.json):</label><br />
+        <textarea id="subscription" rows="10" cols="60" readonly></textarea>
+    </p>
+    <button id="copy">Kopiuj subskrypcję</button>
+</body>
+</html>
